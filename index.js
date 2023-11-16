@@ -1,35 +1,27 @@
-$(window).on('load', function(){
+$(window).on('load', function() {
   setTimeout(function(){
-    $('.logo').addClass('aaa').removeClass('bbb');
+    $('#main_logo').addClass('aaa').removeClass('bbb');
   }, 500);
 
   setTimeout(function(){
-    $('.logo').removeClass('aaa').addClass('bbb');
-  }, 2000);
+    $('#main_logo').removeClass('aaa').addClass('bbb');
+  }, 2200);
 
   setTimeout(function(){
-    $('.door').addClass('active');
-  // }, 500);
-  }, 3500);
+    $('#obj').addClass('active');
+  }, 3700);
 
   setTimeout(function(){
-    $('.obj').addClass('active');
-  }, 5500);
+    $('#char').addClass('active');
+  }, 4700);
 
   setTimeout(function(){
-    $('.char').addClass('active');
-  }, 6500);
+    $('.name').addClass('active');
+  }, 5700);
 
   setTimeout(function(){
-    $('#name').addClass('active');
-  }, 7500);
+    $('#page2').addClass('active');
+    $('#page2_wrapper').addClass('active');
+  }, 7000);
 
-  setTimeout(function(){
-    $('.door2').addClass('active');
-  }, 8500);
-
-
-});
-
-$(function(){
 });

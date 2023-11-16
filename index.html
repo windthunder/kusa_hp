@@ -11,37 +11,29 @@
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  <div class="door">
-    <div class="left">
-      <img class="logo" src="./logo.png">
+  <div id="page1">
+    <div id="bg"></div>
+    <div id="outer_border">
+      <div id="inner_border"></div>
     </div>
-    <div class="right">
-      <img class="logo" src="./logo.png">
+    <img src="./kusa.png" alt="" id="main_logo" class="main">
+    <img src="./object.png" alt="" id="obj" class="main">
+    <img src="./character.png" alt="" id="char" class="main">
+    <img src="./name.png" alt="" id="" class="main name">
+  </div>
+<!-- page2外面包一層東西 用 overflow hide 利用page2的高度撐開他 -->
+  <div id="page2_wrapper">
+    <div id="page2">
+      <img src="./name.png" alt="" id="page2_name">
     </div>
+    <!-- 4調色條 白色 紅黃藍 -->
+    <!-- <div class="color_band" style="background-color: #ffffff; opacity: 1; height: 200px;"></div> -->
+    <!-- <img src="./a.svg" style="position: relative; width: 100%" alt=""> -->
+    <div class="color_band" style="background-color: #115095; opacity: 0.75;"></div>
+    <div class="color_band" style="background-color: #f8b500; opacity: 0.7;"></div>
+    <div class="color_band" style="background-color: #ed008d; opacity: 0.6;"></div>
+    <img src="./qqq.png" id="qqq">
   </div>
 
-  <div class="door2">
-    <div class="left">
-      <div class="outer_border">
-        <div class="inner_border"></div>
-      </div>
-      <img src="./kusa1.png" class="main logo">
-      <img src="./object4.png" class="main obj">
-      <img src="./未命名-1.png" alt="" class="main char">
-    </div>
-    <div class="right">
-      <div class="outer_border">
-        <div class="inner_border"></div>
-      </div>
-      <img src="./kusa2.png" class="main logo">
-      <img src="./object3.png" class="main obj">
-      <img src="./未命名-2.png" alt="" class="main char">
-    </div>
-  </div>
-
-
-
-  <!-- <img src="./character.png" alt="" class="main" id="char"> -->
-  <img src="./name.png" class="main" id="name">
 </body>
 </html>

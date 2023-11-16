@@ -1,203 +1,10 @@
 body {
-  perspective: 1200px;
   margin: 0;
   padding: 0;
-  font-family: 微軟正黑體;
-  background-color: #f1f0ea;
-  height: 100vh;
-  overflow-y: scroll;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-.door {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  transform: rotateX(0deg);
-  transform-style: preserve-3d;
-}
-
-.door .left {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: white;
-  overflow: hidden;
-  transition: all 1.6s ease-in;
-  transform-origin: left;
-}
-
-.door .right {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  background-color: white;
-  overflow: hidden;
-  transition: all 1.6s ease-in;
-  transform-origin: right;
-}
-
-.door img {
-  width: 500px;
-}
-
-.door .left img {
-  position: absolute;
-  top: calc(50vh - 380px);
-  right: -250px;
-}
-
-.door .right img {
-  position: absolute;
-  top: calc(50vh - 380px);
-  left: -250px;
-}
-
-.door.active .left {
-  /* left: -50%; */
-  transform: rotateY(-90deg);
-}
-
-.door.active .right {
-  /* right: -50%; */
-  transform: rotateY(90deg);
-}
-
-.door2 .left {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  transition: all 1.6s ease-out;
-}
-
-.door2 .left .outer_border {
-  border-right: none;
-  padding-right: 0;
-}
-
-.door2 .left .inner_border {
-  border-right: none;
-}
-
-.door2 .right .outer_border {
-  border-left: none;
-  padding-left: 0;
-}
-
-.door2 .right .inner_border {
-  border-left: none;
-}
-
-
-.door2 .right {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  transition: all 1.6s ease-out;
-}
-
-.door2.active .left {
-  left: -60%;
-  /* transform: rotateY(-90deg); */
-}
-
-.door2.active .right {
-  right: -60%;
-  /* transform: rotateY(90deg); */
-}
-
-
-.main {
-  position: absolute;
-  top: calc(50vh - 380px);
-  display: block;
-  width: 500px;
-}
-
-.door2 .left .main {
-  right: -250px;
-}
-
-.door2 .right .main {
-  left: -250px;
-}
-
-.obj {
-  opacity: 0;
-  transition: all .5s ease-in;
-  transform: translateY(-16px);
-}
-
-.obj.active {
-  opacity: 1;
-  transform: translateY(0px);
-}
-
-.char {
-  opacity: 0;
-  transition: all .5s ease-in;
-}
-
-.char.active {
-  opacity: 1;
-}
-
-#name {
-  position: fixed;
-  top: calc(50vh + 200px);
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  display: block;
-  width: 500px;
-  opacity: 0;
-  transition: all .5s ease-in;
-}
-
-#name.active {
-  opacity: 1;
-}
-
-.outer_border {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  border: 20px solid #aea45d;
-  padding: 10px;
-  z-index: -1;
-}
-
-.inner_border {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  border: 3px solid #aea45d;
-  z-index: -1;
-}
-
-
-.aaa {
-  animation-name: rotate-easeOutBounce;
-  animation-duration: 1.2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
-.bbb {
-  animation-name: rotate-easeOutBounce2;
-  animation-duration: 1.2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
 
 @keyframes rotate-easeOutBounce {
   0% {
@@ -281,4 +88,151 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.main {
+  width: 450px;
+  max-width: 90%;
+  position: fixed;
+  margin: 0 auto;
+  top: 300px;
+  left: 0;
+  right: 0;
+  transition: all 1s ease-in-out;
+}
+
+#bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #f1f0ea;
+}
+
+#outer_border {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 20px solid #aea45d;
+  padding: 10px;
+}
+
+#inner_border {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 3px solid #aea45d;
+}
+
+.name {
+  top: 50px;
+  opacity: 0;
+  transition: all .5s ease-in;
+}
+
+#page2 {
+  background-color: white;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  transition: all 2s ease-in-out;
+  /* 5.75是tan 80deg的值 這樣才能配合其他的rotate10 */
+  clip-path: polygon(0 0, 100% 0, 100% calc(0 - 100vw / 5.75), 0% 100%);
+  overflow: hidden;
+}
+
+#page2.active {
+  height: calc(100vh + 100vw / 5.75);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100vh), 0% 100%);
+}
+
+#page2_name {
+  position: absolute;
+  top: 50px;
+  width: 450px;
+  max-width: 90%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.aaa {
+  animation-name: rotate-easeOutBounce;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.bbb {
+  animation-name: rotate-easeOutBounce2;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+
+#obj {
+  opacity: 0;
+  transition: all 1s ease-in;
+  transform: translateY(-16px);
+}
+
+#obj.active {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+#char {
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+
+#char.active {
+  opacity: 1;
+}
+
+.name.active {
+  opacity: 1;
+}
+
+.color_band {
+  width: 120%;
+  position: relative;
+  left: -10%;
+  transform: rotate(-10deg);
+  height: 60px;
+  margin: 10px 0;
+  top: calc(100vw/-12); /* 配合上面#page2的裁切計算的 */
+}
+
+#qqq {
+  max-width: 40%;
+  width: 200px;
+  position: relative;
+  left: 10%;
+  /* transform: rotate(-10deg); */
+  /* height: 60px; */
+  /* margin: 10px 0; */
+  top: calc(100vw/-12 - 140px);
+}
+
+#page2_wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: -300px;
+  transition: all 2s ease-in-out;
+}
+
+#page2_wrapper.active {
+  top: 0;
+}
+
+#page1 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
 }
